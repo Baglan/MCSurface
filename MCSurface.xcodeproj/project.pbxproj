@@ -20,6 +20,7 @@
 		86B0185415B09C01000A49CA /* 72.png in Resources */ = {isa = PBXBuildFile; fileRef = 86B0185315B09C01000A49CA /* 72.png */; };
 		86B09F28161B536C00177464 /* RedSquare.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86B09F27161B536C00177464 /* RedSquare.xib */; };
 		86B09F2B161B5BF100177464 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 86B09F2A161B5BF100177464 /* README.md */; };
+		86B09F2D161B5D7000177464 /* GreenSquare.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86B09F2C161B5D7000177464 /* GreenSquare.xib */; };
 		86D0FA8C161AD84600124938 /* MCRecycleBin.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D0FA87161AD84600124938 /* MCRecycleBin.m */; };
 		86D0FA8D161AD84600124938 /* MCSurfaceKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D0FA89161AD84600124938 /* MCSurfaceKey.m */; };
 		86D0FA8E161AD84600124938 /* MCSurfaceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D0FA8B161AD84600124938 /* MCSurfaceView.m */; };
@@ -44,6 +45,7 @@
 		86B0185315B09C01000A49CA /* 72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 72.png; sourceTree = "<group>"; };
 		86B09F27161B536C00177464 /* RedSquare.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RedSquare.xib; sourceTree = "<group>"; };
 		86B09F2A161B5BF100177464 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		86B09F2C161B5D7000177464 /* GreenSquare.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GreenSquare.xib; sourceTree = "<group>"; };
 		86D0FA86161AD84600124938 /* MCRecycleBin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCRecycleBin.h; path = Classes/MCRecycleBin.h; sourceTree = "<group>"; };
 		86D0FA87161AD84600124938 /* MCRecycleBin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCRecycleBin.m; path = Classes/MCRecycleBin.m; sourceTree = "<group>"; };
 		86D0FA88161AD84600124938 /* MCSurfaceKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCSurfaceKey.h; path = Classes/MCSurfaceKey.h; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				8642CBFA15AC9CD7000970F6 /* ViewController.h */,
 				8642CBFB15AC9CD7000970F6 /* ViewController.m */,
 				86B09F27161B536C00177464 /* RedSquare.xib */,
+				86B09F2C161B5D7000177464 /* GreenSquare.xib */,
 				8642CBFD15AC9CD7000970F6 /* ViewController.xib */,
 				8642CBEF15AC9CD7000970F6 /* Supporting Files */,
 			);
@@ -193,6 +196,7 @@
 				86B0185415B09C01000A49CA /* 72.png in Resources */,
 				86B09F28161B536C00177464 /* RedSquare.xib in Resources */,
 				86B09F2B161B5BF100177464 /* README.md in Resources */,
+				86B09F2D161B5D7000177464 /* GreenSquare.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

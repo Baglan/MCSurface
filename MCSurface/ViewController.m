@@ -93,11 +93,17 @@
 
 - (NSArray *)getAllKeysForSurfaceView:(MCSurfaceView *)surfaceView
 {
-    surfaceView.scrollView.contentSize = CGSizeMake(10000, surfaceView.frame.size.height);
+    surfaceView.scrollView.contentSize = CGSizeMake(12000, surfaceView.frame.size.height);
     
     NSMutableArray *allKeys = [NSMutableArray array];
+    
     for (int i=0; i<50; i++) {
-        MCSurfaceKey *key = [[MCSurfaceKey alloc] initWithType:@"RedSquare" object:nil rect:CGRectMake(200 * i, 100, 100, 100) verticalParallaxRatio:1 horizontalParallaxRatio:1];
+        MCSurfaceKey *key = [[MCSurfaceKey alloc] initWithType:@"RedSquare" object:nil rect:CGRectMake(200 * i, 100, 100, 100) verticalParallaxRatio:1 horizontalParallaxRatio:1 zIndex:2];
+        [allKeys addObject:key];
+    }
+    
+    for (int i=0; i<100; i++) {
+        MCSurfaceKey *key = [[MCSurfaceKey alloc] initWithType:@"GreenSquare" object:nil rect:CGRectMake(300 * i, 50, 200, 200) verticalParallaxRatio:1 horizontalParallaxRatio:0.5 zIndex:1];
         [allKeys addObject:key];
     }
     

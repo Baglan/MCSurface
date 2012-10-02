@@ -7,13 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <QuartzCore/QuartzCore.h>
 #import "MCSurfaceView.h"
 
 @interface MCSurfaceKey : NSObject {
     CGRect _rect;
     CGFloat _verticalParallaxRatio;
     CGFloat _horizontalParallaxRatio;
+    int _zIndex;
 }
 
 @property (nonatomic,readonly) id type;
@@ -27,7 +27,7 @@
  */
 @property (nonatomic,readonly) BOOL hideWhenRecycled;
 
-- (id)initWithType:(id)type object:(id)object rect:(CGRect)rect verticalParallaxRatio:(CGFloat)vertical horizontalParallaxRatio:(CGFloat)horizontal;
+- (id)initWithType:(id)type object:(id)object rect:(CGRect)rect verticalParallaxRatio:(CGFloat)vertical horizontalParallaxRatio:(CGFloat)horizontal zIndex:(int)zIndex;
 - (id)initWithType:(id)type object:(id)object rect:(CGRect)rect;
 
 - (CGRect)getRectForSurfaceView:(MCSurfaceView *)surfaceView;

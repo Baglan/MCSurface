@@ -187,6 +187,8 @@
         UIView *view = [(NSDictionary *)obj objectForKey:@"view"];
         [key surfaceView:self adjustView:view];
     }];
+    
+    NSLog(@"--- done");
 }
 
 @end
