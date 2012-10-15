@@ -12,7 +12,7 @@
 
 @interface MCSurfaceView : UIView <UIScrollViewDelegate>
 
-@property (nonatomic) id<MCSurfaceDataSource> dataSource;
+@property (nonatomic,assign) id<MCSurfaceDataSource> dataSource;
 @property (nonatomic,readonly) UIScrollView *scrollView;
 
 - (void)reloadData;
