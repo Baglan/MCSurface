@@ -16,6 +16,17 @@
 		8642CBF915AC9CD7000970F6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8642CBF815AC9CD7000970F6 /* AppDelegate.m */; };
 		8642CBFC15AC9CD7000970F6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8642CBFB15AC9CD7000970F6 /* ViewController.m */; };
 		8642CBFF15AC9CD7000970F6 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8642CBFD15AC9CD7000970F6 /* ViewController.xib */; };
+		8656B3201652F8C000218709 /* MCSurfaceImageKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 8656B31F1652F8C000218709 /* MCSurfaceImageKey.m */; };
+		8656B3241652FC4300218709 /* MCSurfaceViewControllerKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 8656B3231652FC4300218709 /* MCSurfaceViewControllerKey.m */; };
+		8656B3291653090300218709 /* cloud-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8656B3261653090300218709 /* cloud-1.png */; };
+		8656B32A1653090300218709 /* cloud-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8656B3271653090300218709 /* cloud-2.png */; };
+		8656B32B1653090300218709 /* cloud-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8656B3281653090300218709 /* cloud-3.png */; };
+		8656B33016530BA100218709 /* MyViewControllerKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 8656B32F16530BA100218709 /* MyViewControllerKey.m */; };
+		8656B33416530BBF00218709 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8656B33216530BBF00218709 /* MyViewController.m */; };
+		8656B33516530BBF00218709 /* MyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8656B33316530BBF00218709 /* MyViewController.xib */; };
+		8656B3391653112000218709 /* ColorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8656B3371653112000218709 /* ColorsViewController.m */; };
+		8656B33A1653112000218709 /* ColorsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8656B3381653112000218709 /* ColorsViewController.xib */; };
+		8656B33D1653121700218709 /* ColorViewControllerKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 8656B33C1653121700218709 /* ColorViewControllerKey.m */; };
 		86B0185215B09BFF000A49CA /* 144.png in Resources */ = {isa = PBXBuildFile; fileRef = 86B0185115B09BFF000A49CA /* 144.png */; };
 		86B0185415B09C01000A49CA /* 72.png in Resources */ = {isa = PBXBuildFile; fileRef = 86B0185315B09C01000A49CA /* 72.png */; };
 		86B09F28161B536C00177464 /* RedSquare.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86B09F27161B536C00177464 /* RedSquare.xib */; };
@@ -41,6 +52,23 @@
 		8642CBFA15AC9CD7000970F6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		8642CBFB15AC9CD7000970F6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		8642CBFE15AC9CD7000970F6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		8656B31E1652F8C000218709 /* MCSurfaceImageKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCSurfaceImageKey.h; path = Classes/MCSurfaceImageKey.h; sourceTree = "<group>"; };
+		8656B31F1652F8C000218709 /* MCSurfaceImageKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCSurfaceImageKey.m; path = Classes/MCSurfaceImageKey.m; sourceTree = "<group>"; };
+		8656B3221652FC4300218709 /* MCSurfaceViewControllerKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCSurfaceViewControllerKey.h; path = Classes/MCSurfaceViewControllerKey.h; sourceTree = "<group>"; };
+		8656B3231652FC4300218709 /* MCSurfaceViewControllerKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCSurfaceViewControllerKey.m; path = Classes/MCSurfaceViewControllerKey.m; sourceTree = "<group>"; };
+		8656B3261653090300218709 /* cloud-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cloud-1.png"; sourceTree = "<group>"; };
+		8656B3271653090300218709 /* cloud-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cloud-2.png"; sourceTree = "<group>"; };
+		8656B3281653090300218709 /* cloud-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cloud-3.png"; sourceTree = "<group>"; };
+		8656B32E16530BA100218709 /* MyViewControllerKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyViewControllerKey.h; sourceTree = "<group>"; };
+		8656B32F16530BA100218709 /* MyViewControllerKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyViewControllerKey.m; sourceTree = "<group>"; };
+		8656B33116530BBF00218709 /* MyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
+		8656B33216530BBF00218709 /* MyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
+		8656B33316530BBF00218709 /* MyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyViewController.xib; sourceTree = "<group>"; };
+		8656B3361653112000218709 /* ColorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorsViewController.h; sourceTree = "<group>"; };
+		8656B3371653112000218709 /* ColorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorsViewController.m; sourceTree = "<group>"; };
+		8656B3381653112000218709 /* ColorsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ColorsViewController.xib; sourceTree = "<group>"; };
+		8656B33B1653121700218709 /* ColorViewControllerKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorViewControllerKey.h; sourceTree = "<group>"; };
+		8656B33C1653121700218709 /* ColorViewControllerKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorViewControllerKey.m; sourceTree = "<group>"; };
 		86B0185115B09BFF000A49CA /* 144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 144.png; sourceTree = "<group>"; };
 		86B0185315B09C01000A49CA /* 72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 72.png; sourceTree = "<group>"; };
 		86B09F27161B536C00177464 /* RedSquare.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RedSquare.xib; sourceTree = "<group>"; };
@@ -103,14 +131,13 @@
 		8642CBEE15AC9CD7000970F6 /* MCSurface */ = {
 			isa = PBXGroup;
 			children = (
+				8656B32C16530B2500218709 /* Views */,
+				8656B3251653062400218709 /* Assets */,
 				8642CC0515AC9D25000970F6 /* MCSurface */,
 				8642CBF715AC9CD7000970F6 /* AppDelegate.h */,
 				8642CBF815AC9CD7000970F6 /* AppDelegate.m */,
 				8642CBFA15AC9CD7000970F6 /* ViewController.h */,
 				8642CBFB15AC9CD7000970F6 /* ViewController.m */,
-				86B09F27161B536C00177464 /* RedSquare.xib */,
-				86B09F2C161B5D7000177464 /* GreenSquare.xib */,
-				8642CBFD15AC9CD7000970F6 /* ViewController.xib */,
 				8642CBEF15AC9CD7000970F6 /* Supporting Files */,
 			);
 			path = MCSurface;
@@ -136,8 +163,58 @@
 				86D0FA89161AD84600124938 /* MCSurfaceKey.m */,
 				86D0FA8A161AD84600124938 /* MCSurfaceView.h */,
 				86D0FA8B161AD84600124938 /* MCSurfaceView.m */,
+				8656B31E1652F8C000218709 /* MCSurfaceImageKey.h */,
+				8656B31F1652F8C000218709 /* MCSurfaceImageKey.m */,
+				8656B3221652FC4300218709 /* MCSurfaceViewControllerKey.h */,
+				8656B3231652FC4300218709 /* MCSurfaceViewControllerKey.m */,
 			);
 			name = MCSurface;
+			sourceTree = "<group>";
+		};
+		8656B3251653062400218709 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				8656B3261653090300218709 /* cloud-1.png */,
+				8656B3271653090300218709 /* cloud-2.png */,
+				8656B3281653090300218709 /* cloud-3.png */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		8656B32C16530B2500218709 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				86B09F27161B536C00177464 /* RedSquare.xib */,
+				86B09F2C161B5D7000177464 /* GreenSquare.xib */,
+				8642CBFD15AC9CD7000970F6 /* ViewController.xib */,
+				8656B33F1653122F00218709 /* MyView */,
+				8656B33E1653122000218709 /* Color */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		8656B33E1653122000218709 /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				8656B3361653112000218709 /* ColorsViewController.h */,
+				8656B3371653112000218709 /* ColorsViewController.m */,
+				8656B3381653112000218709 /* ColorsViewController.xib */,
+				8656B33B1653121700218709 /* ColorViewControllerKey.h */,
+				8656B33C1653121700218709 /* ColorViewControllerKey.m */,
+			);
+			name = Color;
+			sourceTree = "<group>";
+		};
+		8656B33F1653122F00218709 /* MyView */ = {
+			isa = PBXGroup;
+			children = (
+				8656B32E16530BA100218709 /* MyViewControllerKey.h */,
+				8656B32F16530BA100218709 /* MyViewControllerKey.m */,
+				8656B33116530BBF00218709 /* MyViewController.h */,
+				8656B33216530BBF00218709 /* MyViewController.m */,
+				8656B33316530BBF00218709 /* MyViewController.xib */,
+			);
+			name = MyView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +274,11 @@
 				86B09F28161B536C00177464 /* RedSquare.xib in Resources */,
 				86B09F2B161B5BF100177464 /* README.md in Resources */,
 				86B09F2D161B5D7000177464 /* GreenSquare.xib in Resources */,
+				8656B3291653090300218709 /* cloud-1.png in Resources */,
+				8656B32A1653090300218709 /* cloud-2.png in Resources */,
+				8656B32B1653090300218709 /* cloud-3.png in Resources */,
+				8656B33516530BBF00218709 /* MyViewController.xib in Resources */,
+				8656B33A1653112000218709 /* ColorsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,6 +295,12 @@
 				86D0FA8C161AD84600124938 /* MCRecycleBin.m in Sources */,
 				86D0FA8D161AD84600124938 /* MCSurfaceKey.m in Sources */,
 				86D0FA8E161AD84600124938 /* MCSurfaceView.m in Sources */,
+				8656B3201652F8C000218709 /* MCSurfaceImageKey.m in Sources */,
+				8656B3241652FC4300218709 /* MCSurfaceViewControllerKey.m in Sources */,
+				8656B33016530BA100218709 /* MyViewControllerKey.m in Sources */,
+				8656B33416530BBF00218709 /* MyViewController.m in Sources */,
+				8656B3391653112000218709 /* ColorsViewController.m in Sources */,
+				8656B33D1653121700218709 /* ColorViewControllerKey.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

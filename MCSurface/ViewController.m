@@ -9,6 +9,9 @@
 #import "ViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "MCSurfaceKey.h"
+#import "MCSurfaceImageKey.h"
+#import "MyViewControllerKey.h"
+#import "ColorViewControllerKey.h"
 
 @interface ViewController ()
 
@@ -19,43 +22,6 @@
     CGRect _visibleRect;
     NSSet *_keys;
     NSDictionary *_rects;
-}
-
-- (void)populateRects
-{
-    NSMutableDictionary *rects = [NSMutableDictionary dictionary];
-    
-    for (int i=0; i<30; i++) {
-        NSString *key = [NSString stringWithFormat:@"a-%d", i];
-        CGRect frame = CGRectMake(500 * i, 200, 320, 320);
-        NSValue *frameValue = [NSValue valueWithCGRect:frame];
-        
-        NSDictionary *data = [NSDictionary dictionaryWithObjectsAndKeys: @"A", @"type", frameValue, @"frame", nil];
-        
-        [rects setObject:data forKey:key];
-    }
-    
-    for (int i=0; i<100; i++) {
-        NSString *key = [NSString stringWithFormat:@"b-%d", i];
-        CGRect frame = CGRectMake(300 * i, 100, 200, 600);
-        NSValue *frameValue = [NSValue valueWithCGRect:frame];
-        
-        NSDictionary *data = [NSDictionary dictionaryWithObjectsAndKeys: @"B", @"type", frameValue, @"frame", nil];
-        
-        [rects setObject:data forKey:key];
-    }
-    
-    for (int i=0; i<100; i++) {
-        NSString *key = [NSString stringWithFormat:@"c-%d", i];
-        CGRect frame = CGRectMake(100 * i, 370, 50, 50);
-        NSValue *frameValue = [NSValue valueWithCGRect:frame];
-        
-        NSDictionary *data = [NSDictionary dictionaryWithObjectsAndKeys: @"C", @"type", frameValue, @"frame", nil];
-        
-        [rects setObject:data forKey:key];
-    }
-    
-    _rects = [NSDictionary dictionaryWithDictionary:rects];
 }
 
 - (void)viewDidLoad
@@ -70,12 +36,6 @@
     _surfaceView.backgroundColor = [UIColor whiteColor];
     
     [_surfaceView reloadData];
-}
-
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -104,6 +64,29 @@
     
     for (int i=0; i<100; i++) {
         MCSurfaceKey *key = [[MCSurfaceKey alloc] initWithType:@"GreenSquare" object:nil rect:CGRectMake(300 * i, 50, 200, 200) verticalParallaxRatio:1 horizontalParallaxRatio:0.5 zIndex:1];
+        [allKeys addObject:key];
+    }
+    
+    // Clouds
+    NSArray * cloudImageNames = @[@"cloud-1",@"cloud-2",@"cloud-3"];
+    for (int i=0; i<100; i++) {
+        NSString * imageName = cloudImageNames[i%cloudImageNames.count];
+        CGRect imageRect = CGRectMake(i * 320, 0, 320, 568);
+        MCSurfaceImageKey *key = [[MCSurfaceImageKey alloc] initWithImageName:imageName rect:imageRect verticalParallaxRatio:0 horizontalParallaxRatio:1.2 zIndex:-1];
+        [allKeys addObject:key];
+    }
+    
+    // Greetings
+    for (int i=0; i<100; i++) {
+        CGRect colorRect = CGRectMake(i * 320 * 2, 400, 320, 320);
+        MyViewControllerKey *key = [[MyViewControllerKey alloc] initWithRect:colorRect verticalParallaxRatio:0 horizontalParallaxRatio:0.8 zIndex:20];
+        [allKeys addObject:key];
+    }
+    
+    // Colors
+    for (int i=0; i<100; i++) {
+        CGRect colorRect = CGRectMake(i * 320 * 2 + 50, 100, 200, 200);
+        ColorViewControllerKey *key = [[ColorViewControllerKey alloc] initWithRect:colorRect verticalParallaxRatio:0 horizontalParallaxRatio:0.6 zIndex:20];
         [allKeys addObject:key];
     }
     
