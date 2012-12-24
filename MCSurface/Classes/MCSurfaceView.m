@@ -128,7 +128,7 @@
 #pragma mark -
 #pragma mark Other
 
-- (void)reloadData
+- (void)clearAllViewsAndKeys
 {
     // Remove all views
     [_visibleViews enumerateObjectsUsingBlock:^(id obj, BOOL *stop) {
@@ -147,6 +147,11 @@
     [_visibleViews removeAllObjects];
     [_visibleKeys removeAllObjects];
     [_allKeys removeAllObjects];
+}
+
+- (void)reloadData
+{
+    [self clearAllViewsAndKeys];
 
     // Re-populate
     [_allKeys addObjectsFromArray:[_dataSource getAllKeysForSurfaceView:self]];
@@ -187,6 +192,23 @@
         UIView *view = [(NSDictionary *)obj objectForKey:@"view"];
         [key surfaceView:self adjustView:view];
     }];
+}
+
+#pragma mark -
+#pragma mark Properties
+
+- (void)setKeys:(NSArray *)keys
+{
+    [self clearAllViewsAndKeys];
+    
+    [_allKeys addObjectsFromArray:keys];
+    
+    [self setNeedsLayout];
+}
+
+- (NSArray *)keys
+{
+    return [_allKeys allObjects];
 }
 
 @end

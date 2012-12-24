@@ -14,6 +14,7 @@
 
 @property (nonatomic,assign) id<MCSurfaceDataSource> dataSource;
 @property (nonatomic,readonly) UIScrollView *scrollView;
+@property (nonatomic,retain) NSArray * keys;
 
 - (void)reloadData;
 - (UIView *)dequeueViewForRecyclingKey:(id)key;
