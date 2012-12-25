@@ -24,6 +24,17 @@
     NSDictionary *_rects;
 }
 
+- (void)offEdge:(NSNotification *)notification
+{
+    MCSurfaceView * view = notification.object;
+    NSString * edge = nil;
+    edge = view.offLeftEdge ? @"LEFT" : edge;
+    edge = view.offRightEdge ? @"RIGHT" : edge;
+    edge = view.offTopEdge ? @"TOP" : edge;
+    edge = view.offBottomEdge ? @"BOTTOM" : edge;
+    NSLog(@"--- Dragged off %@ edge", edge);
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -36,6 +47,8 @@
     _surfaceView.backgroundColor = [UIColor whiteColor];
     
     [_surfaceView reloadData];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(offEdge:) name:MCSURFACE_DRAGGED_OFF_THE_EDGE_NOTIFICATION object:_surfaceView];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
