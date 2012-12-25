@@ -28,6 +28,7 @@ enum MCSurfaceView_ScrollDirection {
 
 @property (nonatomic, assign) BOOL pagingEnabled;
 @property (nonatomic, assign) NSInteger page;
+- (void)setPage:(NSInteger)page animated:(BOOL)animated;
 
 @property (nonatomic, readonly) BOOL offLeftEdge;
 @property (nonatomic, readonly) BOOL offRightEdge;
