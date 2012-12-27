@@ -128,10 +128,7 @@
 
 - (NSSet *)keysForVisibleViews
 {
-    CGRect visibleRect = CGRectMake(_scrollView.contentOffset.x,
-                                    _scrollView.contentOffset.y,
-                                    self.bounds.size.width,
-                                    self.bounds.size.height);
+    CGRect visibleRect = self.bounds;
     
     NSMutableSet *visibleKeys = [NSMutableSet set];
     

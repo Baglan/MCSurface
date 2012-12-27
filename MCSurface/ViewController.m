@@ -70,6 +70,10 @@
     
     NSMutableArray *allKeys = [NSMutableArray array];
     
+    MCSurfaceKey *key = [[MCSurfaceKey alloc] initWithType:@"RedSquare" object:nil rect:CGRectMake(2000, 300, 200, 200) verticalParallaxRatio:1 horizontalParallaxRatio:1 zIndex:2];
+    key.boundingBox = self.view.bounds;
+    [allKeys addObject:key];
+    
     for (int i=0; i<50; i++) {
         MCSurfaceKey *key = [[MCSurfaceKey alloc] initWithType:@"RedSquare" object:nil rect:CGRectMake(200 * i, 100, 100, 100) verticalParallaxRatio:1 horizontalParallaxRatio:1 zIndex:2];
         [allKeys addObject:key];

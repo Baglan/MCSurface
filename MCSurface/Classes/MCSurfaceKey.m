@@ -28,6 +28,8 @@
         _object = object;
         _type = type;
         _hideWhenRecycled = NO;
+        
+        _boundingBox = CGRectInfinite;
     }
     return self;
 }
@@ -37,25 +39,29 @@
     return [self initWithType:type object:object rect:rect verticalParallaxRatio:1.0 horizontalParallaxRatio:1.0 zIndex:0];
 }
 
-- (CGRect)getRectForSurfaceView:(MCSurfaceView *)surfaceView
+- (CGAffineTransform)transformForSurfaceView:(MCSurfaceView *)surfaceView
 {
-    CGRect rect = _rect;
     CGPoint contentOffset = surfaceView.scrollView.contentOffset;
-    rect.origin = CGPointMake(rect.origin.x - contentOffset.x * (_horizontalParallaxRatio - 1),
-                              rect.origin.y - contentOffset.y * (_verticalParallaxRatio - 1));
-    return rect;
+    CGFloat deltaX = -contentOffset.x * _horizontalParallaxRatio;
+    CGFloat deltaY = -contentOffset.y * _verticalParallaxRatio;
+    
+    deltaX = _rect.origin.x + deltaX < _boundingBox.origin.x ? deltaX = _boundingBox.origin.x - _rect.origin.x : deltaX;
+    deltaY = _rect.origin.y + deltaY < _boundingBox.origin.y ? deltaX = _boundingBox.origin.y - _rect.origin.y : deltaY;
+    
+    deltaX = (_rect.origin.x + _rect.size.width) + deltaX > (_boundingBox.origin.x + _boundingBox.size.width) ? deltaX = (_boundingBox.origin.x + _boundingBox.size.width) - (_rect.origin.x + _rect.size.width) : deltaX;
+    deltaY = (_rect.origin.y + _rect.size.height) + deltaX > (_boundingBox.origin.y + _boundingBox.size.height) ? deltaX = (_boundingBox.origin.y + _boundingBox.size.height) - (_rect.origin.y + _rect.size.height) : deltaY;
+    
+    return CGAffineTransformMakeTranslation(deltaX, deltaY);
 }
 
-- (CGAffineTransform)transformForContentOffset:(CGPoint)contentOffset
+- (CGRect)getRectForSurfaceView:(MCSurfaceView *)surfaceView
 {
-    return CGAffineTransformMakeTranslation(-contentOffset.x * _horizontalParallaxRatio,
-                                            -contentOffset.y * _verticalParallaxRatio);
+    return CGRectApplyAffineTransform(_rect, [self transformForSurfaceView:surfaceView]);
 }
 
 - (void)surfaceView:(MCSurfaceView *)surfaceView adjustView:(UIView *)view
 {
-    CGPoint contentOffset = surfaceView.scrollView.contentOffset;
-    view.transform = [self transformForContentOffset:contentOffset];
+    view.transform = [self transformForSurfaceView:surfaceView];
 }
 
 - (UIView *)surfaceViewGetView:(MCSurfaceView *)surfaceView
