@@ -45,11 +45,11 @@
     CGFloat deltaX = -contentOffset.x * _horizontalParallaxRatio;
     CGFloat deltaY = -contentOffset.y * _verticalParallaxRatio;
     
-    deltaX = _rect.origin.x + deltaX < _boundingBox.origin.x ? deltaX = _boundingBox.origin.x - _rect.origin.x : deltaX;
-    deltaY = _rect.origin.y + deltaY < _boundingBox.origin.y ? deltaX = _boundingBox.origin.y - _rect.origin.y : deltaY;
+    deltaX = _rect.origin.x + deltaX < _boundingBox.origin.x ? _boundingBox.origin.x - _rect.origin.x : deltaX;
+    deltaY = _rect.origin.y + deltaY < _boundingBox.origin.y ? _boundingBox.origin.y - _rect.origin.y : deltaY;
     
-    deltaX = (_rect.origin.x + _rect.size.width) + deltaX > (_boundingBox.origin.x + _boundingBox.size.width) ? deltaX = (_boundingBox.origin.x + _boundingBox.size.width) - (_rect.origin.x + _rect.size.width) : deltaX;
-    deltaY = (_rect.origin.y + _rect.size.height) + deltaX > (_boundingBox.origin.y + _boundingBox.size.height) ? deltaX = (_boundingBox.origin.y + _boundingBox.size.height) - (_rect.origin.y + _rect.size.height) : deltaY;
+    deltaX = (_rect.origin.x + _rect.size.width) + deltaX > (_boundingBox.origin.x + _boundingBox.size.width) ? (_boundingBox.origin.x + _boundingBox.size.width) - (_rect.origin.x + _rect.size.width) : deltaX;
+    deltaY = (_rect.origin.y + _rect.size.height) + deltaY > (_boundingBox.origin.y + _boundingBox.size.height) ? (_boundingBox.origin.y + _boundingBox.size.height) - (_rect.origin.y + _rect.size.height) : deltaY;
     
     return CGAffineTransformMakeTranslation(deltaX, deltaY);
 }
