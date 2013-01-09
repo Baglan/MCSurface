@@ -351,8 +351,9 @@
 {
     if (_scrolling) {
         _scrolling = NO;
-        [[NSNotificationCenter defaultCenter] postNotificationName:MCSURFACE_SCROLLING_ENDED_NOTIFICATION object:self];
     }
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:MCSURFACE_SCROLLING_ENDED_NOTIFICATION object:self];
     
     if (self.pagingEnabled) {
         [self scrollViewAdjustToClosest:scrollView];
