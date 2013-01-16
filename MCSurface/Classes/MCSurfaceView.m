@@ -11,6 +11,7 @@
 #import "MCSurfaceKey.h"
 
 #define MCSURFACE_EDGE_THRESHOLD    40.0
+#define MCSURFACE_NOTIFICATION_DELAY 0.2
 
 @interface MCSurfaceView () <UIGestureRecognizerDelegate> {
     
@@ -26,6 +27,7 @@
     CGPoint _initialContentOffset;
     BOOL _scrolling;
     UIPinchGestureRecognizer * _pinchGestureRecognizer;
+    NSTimer * _delayedNotificationTimer;
 }
 
 @synthesize dataSource = _dataSource;
@@ -297,6 +299,11 @@
         [[NSNotificationCenter defaultCenter] postNotificationName:MCSURFACE_SCROLLING_STARTED_NOTIFICATION object:self];
     }
     
+    if (_delayedNotificationTimer) {
+        [_delayedNotificationTimer invalidate];
+        _delayedNotificationTimer = nil;
+    }
+    
     if (_directionLockEnabled) {
         if (scrollView.dragging && _scrollDirection == MCSurfaceView_ScrollDirectionUndecided) {
             CGPoint contentOffset = scrollView.contentOffset;
@@ -347,6 +354,12 @@
     }
 }
 
+- (void)delayedScrollViewDidEndScrolling
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:MCSURFACE_DELAYED_SCROLLING_ENDED_NOTIFICATION object:self];
+}
+
+
 - (void)scrollViewDidEndScrolling:(UIScrollView *)scrollView
 {
     if (_scrolling) {
@@ -358,6 +371,11 @@
     if (self.pagingEnabled) {
         [self scrollViewAdjustToClosest:scrollView];
     }
+    
+    [_delayedNotificationTimer invalidate];
+    _delayedNotificationTimer = nil;
+    
+    _delayedNotificationTimer = [NSTimer scheduledTimerWithTimeInterval:MCSURFACE_NOTIFICATION_DELAY target:self selector:@selector(delayedScrollViewDidEndScrolling) userInfo:nil repeats:NO];
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
