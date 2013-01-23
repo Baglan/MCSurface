@@ -9,6 +9,7 @@
 #import "MCSurfaceView.h"
 #import "MCRecycleBin.h"
 #import "MCSurfaceKey.h"
+#import <QuartzCore/QuartzCore.h>
 
 #define MCSURFACE_EDGE_THRESHOLD    40.0
 #define MCSURFACE_NOTIFICATION_DELAY 0.2
@@ -207,10 +208,25 @@
     }];
     
     // Update positions for visible views
+    NSMutableArray * views = [NSMutableArray array];
     [_visibleViews enumerateObjectsUsingBlock:^(id obj, BOOL *stop) {
         MCSurfaceKey *key = [(NSDictionary *)obj objectForKey:@"key"];
         UIView *view = [(NSDictionary *)obj objectForKey:@"view"];
         [key surfaceView:self adjustView:view];
+        [views addObject:view];
+    }];
+    
+    // Re-order subviews by layer zPosition
+    // This is necessary to preserve the correct responder chain
+    NSArray * sortedViews = [views sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        UIView * a = obj1;
+        UIView * b = obj2;
+        return a.layer.zPosition > b.layer.zPosition ? NSOrderedDescending : (a.layer.zPosition < b.layer.zPosition ? NSOrderedAscending : NSOrderedSame);
+    }];
+    
+    [sortedViews enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        UIView * view = obj;
+        [self bringSubviewToFront:view];
     }];
 }
 
