@@ -14,4 +14,6 @@
 - (UIViewController *)createController;
 - (void)updateController:(id)controller;
 
+- (id)controllerForView:(id)view;
+
 @end
