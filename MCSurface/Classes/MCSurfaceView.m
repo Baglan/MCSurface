@@ -331,6 +331,8 @@
             } else {
                 _scrollDirection = MCSurfaceView_ScrollDirectionVertical;
             }
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:MCSURFACE_DIRECTION_LOCKED_NOTIFICATION object:self];
         }
         
         // Compensate for direction lock
