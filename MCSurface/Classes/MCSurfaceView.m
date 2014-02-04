@@ -29,6 +29,7 @@
     BOOL _scrolling;
     UIPinchGestureRecognizer * _pinchGestureRecognizer;
     NSTimer * _delayedNotificationTimer;
+    NSInteger _previousPage;
 }
 
 @synthesize dataSource = _dataSource;
@@ -228,6 +229,12 @@
         UIView * view = obj;
         [self bringSubviewToFront:view];
     }];
+    
+    NSInteger currentPage = self.page;
+    if (_previousPage != currentPage) {
+        _previousPage = currentPage;
+        [[NSNotificationCenter defaultCenter] postNotificationName:MCSURFACE_PAGE_CHANGED_NOTIFICATION object:self];
+    }
 }
 
 #pragma mark -
